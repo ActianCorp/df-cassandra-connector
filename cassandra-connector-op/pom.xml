@@ -22,7 +22,7 @@
     <groupId>com.actian.ilabs.dataflow</groupId>
     <artifactId>cassandra-connector-op</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <dependencies>
         <dependency>
             <groupId>com.datastax.cassandra</groupId>

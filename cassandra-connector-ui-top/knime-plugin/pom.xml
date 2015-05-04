@@ -20,12 +20,12 @@
     <groupId>com.actian.ilabs.dataflow</groupId>
     <artifactId>com.actian.ilabs.dataflow.cassandra.ui.plugin</artifactId>
     <packaging>eclipse-plugin</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <parent>
         <groupId>com.actian.ilabs.dataflow</groupId>
         <artifactId>cassandra-connector-ui-top</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
 
     <build>

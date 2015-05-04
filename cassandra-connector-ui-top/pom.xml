@@ -21,7 +21,7 @@
     <groupId>com.actian.ilabs.dataflow</groupId>
     <artifactId>cassandra-connector-ui-top</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <modules>
         <module>knime-feature</module>
         <module>knime-plugin</module>

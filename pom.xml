@@ -22,7 +22,7 @@
     <groupId>com.actian.ilabs.dataflow</groupId>
     <artifactId>cassandra-connector</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <modules>
         <module>cassandra-connector-op-deps</module>
         <module>cassandra-connector-op</module>
