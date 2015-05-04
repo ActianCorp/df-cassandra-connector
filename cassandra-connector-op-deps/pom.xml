@@ -21,7 +21,7 @@
     </properties>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.actian.ilabs.dataflow</groupId>
-    <artifactId>cassandra-deps</artifactId>
+    <artifactId>cassandra-connector-deps</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <build>

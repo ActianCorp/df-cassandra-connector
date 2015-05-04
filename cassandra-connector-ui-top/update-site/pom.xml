@@ -18,7 +18,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.actian.ilabs.dataflow</groupId>
-    <artifactId>com.actian.ilabs.dataflow.cassandra-connector.ui.update</artifactId>
+    <artifactId>com.actian.ilabs.dataflow.cassandra.ui.update</artifactId>
     <packaging>eclipse-repository</packaging>
     <version>1.0.0</version>
     <parent>
@@ -37,19 +37,19 @@
     <dependencies>
         <dependency>
             <groupId>com.actian.ilabs.dataflow</groupId>
-            <artifactId>com.actian.ilabs.dataflow.cassandra-connector.ui.plugin</artifactId>
+            <artifactId>com.actian.ilabs.dataflow.cassandra.ui.plugin</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.actian.ilabs.dataflow</groupId>
-            <artifactId>com.actian.ilabs.dataflow.cassandra-connector.ui.plugin</artifactId>
+            <artifactId>com.actian.ilabs.dataflow.cassandra.ui.plugin</artifactId>
             <version>1.0.0</version>
             <classifier>p2metadata</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>com.actian.ilabs.dataflow</groupId>
-            <artifactId>com.actian.ilabs.dataflow.cassandra-connector.ui.plugin</artifactId>
+            <artifactId>com.actian.ilabs.dataflow.cassandra.ui.plugin</artifactId>
             <version>1.0.0</version>
             <classifier>p2artifacts</classifier>
             <type>xml</type>

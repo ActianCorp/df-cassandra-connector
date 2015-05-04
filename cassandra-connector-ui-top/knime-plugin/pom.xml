@@ -18,7 +18,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.actian.ilabs.dataflow</groupId>
-    <artifactId>com.actian.ilabs.dataflow.cassandra-connector.ui.plugin</artifactId>
+    <artifactId>com.actian.ilabs.dataflow.cassandra.ui.plugin</artifactId>
     <packaging>eclipse-plugin</packaging>
     <version>1.0.0</version>
 
@@ -81,20 +81,6 @@
                                     <groupId>com.datastax.cassandra</groupId>
                                     <artifactId>cassandra-driver-core</artifactId>
                                     <version>2.0.0</version>
-                                    <type>jar</type>
-                                    <overWrite>false</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>com.jayway.jsonpath</groupId>
-                                    <artifactId>json-path</artifactId>
-                                    <version>2.0.0</version>
-                                    <type>jar</type>
-                                    <overWrite>false</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>net.minidev</groupId>
-                                    <artifactId>json-smart</artifactId>
-                                    <version>2.1.1</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
                                 </artifactItem>

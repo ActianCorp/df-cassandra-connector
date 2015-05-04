@@ -35,7 +35,7 @@ The ZIP file can be found in the target directory under
 and with a name like 
 
 
-    com.actian.ilabs.dataflow.cassandra-connector.ui.update-1.y.z.zip
+    com.actian.ilabs.dataflow.cassandra.ui.update-1.y.z.zip
 
 The file [examples/KNIME/JSONPath_Runner_Example.zip](https://github.com/ActianCorp/df-jsonpath/raw/master/examples/KNIME/JSONPath_Twitter_Example.zip) 
 contains a KNIME workflow that can be imported into KNIME and used to test the plug-in.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE knimeNode PUBLIC "-//UNIKN//DTD KNIME Node 2.0//EN" "http://www.knime.org/Node.dtd">
+<knimeNode icon="./WriteToCassandraNodeIcon.png" type="Manipulator">
+    <name>Cassandra Writer</name>
+    <shortDescription>Node for writing data to a Cassandra database (cluster).</shortDescription>
+    <fullDescription>
+        <intro>
+        	Node for writing data to a Cassandra database (cluster).
+		</intro>
+		<option name="Nodes">The contact points to connect to.</option>
+        <option name="User">A valid Cassandra user.</option>
+        <option name="Password">A password matching the provided user.</option>
+		<option name="Insert Statement">The (CQL) insert statement to execute. 
+			If the statement is parametrized, the parameters port must be 
+			connected and the parameter names must match the field names 
+			of the input port.
+		</option>
+	</fullDescription>
+	
+    <ports>
+        <inPort index="0" name="Parameters">Insert statement parameters.</inPort>
+	</ports>
+	
+</knimeNode>

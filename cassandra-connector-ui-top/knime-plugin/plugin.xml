@@ -28,7 +28,11 @@
     <extension point="org.knime.workbench.repository.nodes">
         <node
                 category-path="/ActianILabs"
-                factory-class="com.actian.ilabs.dataflow.jsonpath.ui.runner.JSONPathRunnerNodeModelFactory"
-                id="com.actian.ilabs.dataflow.jsonpath.ui.runner.JSONPathRunnerNodeModelFactory"/>
+                factory-class="com.actian.ilabs.dataflow.cassandra.ui.writer.WriteToCassandraNodeModelFactory"
+                id="com.actian.ilabs.dataflow.cassandra.ui.writer.WriteToCassandraNodeModelFactory"/>
+        <node
+                category-path="/ActianILabs"
+                factory-class="com.actian.ilabs.dataflow.cassandra.ui.writer.ReadFromCassandraNodeModelFactory"
+                id="com.actian.ilabs.dataflow.cassandra.ui.writer.ReadFromCassandraNodeModelFactory"/>
     </extension>
 </plugin>

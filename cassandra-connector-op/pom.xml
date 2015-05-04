@@ -20,7 +20,7 @@
     </properties>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.actian.ilabs.dataflow</groupId>
-    <artifactId>cassandra-op</artifactId>
+    <artifactId>cassandra-connector-op</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
     <dependencies>
@@ -28,16 +28,6 @@
             <groupId>com.datastax.cassandra</groupId>
             <artifactId>cassandra-driver-core</artifactId>
             <version>2.0.0</version>
-        </dependency>
-         <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.minidev</groupId>
-            <artifactId>json-smart</artifactId>
-            <version>2.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.pervasive.datarush</groupId>
@@ -57,6 +47,16 @@
             <version>2.6</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.3</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -75,7 +75,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.actian.ilabs.dataflow.jsonpath.runner.RunJSONPath</mainClass>
+                            <mainClass>com.actian.ilabs.dataflow.cassandra.reader.ReadFromCassandra</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
