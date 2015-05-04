@@ -32,7 +32,7 @@
                 id="com.actian.ilabs.dataflow.cassandra.ui.writer.WriteToCassandraNodeModelFactory"/>
         <node
                 category-path="/ActianILabs"
-                factory-class="com.actian.ilabs.dataflow.cassandra.ui.writer.ReadFromCassandraNodeModelFactory"
-                id="com.actian.ilabs.dataflow.cassandra.ui.writer.ReadFromCassandraNodeModelFactory"/>
+                factory-class="com.actian.ilabs.dataflow.cassandra.ui.reader.ReadFromCassandraNodeModelFactory"
+                id="com.actian.ilabs.dataflow.cassandra.ui.reader.ReadFromCassandraNodeModelFactory"/>
     </extension>
 </plugin>

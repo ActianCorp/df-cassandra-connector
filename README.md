@@ -20,7 +20,7 @@ To build, run:
 ## Using the Cassandra Connector with the DataFlow Engine
 
 The build generates a JAR file in the target directory under
-[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-jsonpath/tree/master/jsonpath-op)
+[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-cassandra-connector/tree/master/jsonpath-op)
 with a name similar to 
 
     cassandra-connector-op-1.y.z.jar
@@ -31,14 +31,12 @@ which can be included on the classpath when using the DataFlow engine.
 
 The build also produces a ZIP file which can be used as an archive file with the KNIME 'Help/Install New Software...' dialog.
 The ZIP file can be found in the target directory under
-[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-jsonpath/tree/master/jsonpath-ui-top/update-site) 
+[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-cassandra-connector/tree/master/jsonpath-ui-top/update-site) 
 and with a name like 
 
 
     com.actian.ilabs.dataflow.cassandra.ui.update-1.y.z.zip
 
-The file [examples/KNIME/JSONPath_Runner_Example.zip](https://github.com/ActianCorp/df-jsonpath/raw/master/examples/KNIME/JSONPath_Twitter_Example.zip) 
-contains a KNIME workflow that can be imported into KNIME and used to test the plug-in.
 
 
 

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Actian ILabs Cassandra Connector plug-in
 Bundle-SymbolicName: com.actian.ilabs.dataflow.cassandra.ui.plugin;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-Activator: com.actian.ilabs.dataflow.cassandra.ui.Activator
 Bundle-Vendor: Actian Corporation
 Eclipse-RegisterBuddy: com.pervasive.datarush.core.runtime
@@ -19,6 +19,9 @@ Bundle-ClassPath: .,
  target/lib/ant-contrib.jar,
  target/lib/com.actian.ilabs.dataflow.cassandra.ui.plugin.jar,
  target/lib/cassandra-connector-op.jar,
- target/lib/json-path.jar,
- target/lib/json-smart.jar,
- target/lib/asm.jar
+ target/lib/cassandra-driver-core.jar,
+ target/lib/netty.jar,
+ target/lib/guava.jar,
+ target/lib/lz4.jar,
+ target/lib/metrics-core.jar,
+ target/lib/snappy-java.jar
