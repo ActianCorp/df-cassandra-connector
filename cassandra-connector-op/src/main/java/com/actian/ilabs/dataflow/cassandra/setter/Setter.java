@@ -4,5 +4,5 @@ import com.datastax.driver.core.Row;
 
 public interface Setter {
 
-	public void set(Row row);
+	void set(Row row);
 }

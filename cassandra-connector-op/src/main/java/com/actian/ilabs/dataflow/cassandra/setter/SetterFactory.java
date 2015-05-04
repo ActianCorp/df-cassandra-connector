@@ -48,9 +48,9 @@ public class SetterFactory {
 		return factories.get(sourceJavaType).create(target);
 	}
 	
-	private static interface InternalFactory {
-		public Setter create(ScalarOutputField target);
-		public ScalarTokenType targetType();
+	private interface InternalFactory {
+		Setter create(ScalarOutputField target);
+		ScalarTokenType targetType();
 	}
 	
 	private static abstract class AbstractSetter implements Setter {

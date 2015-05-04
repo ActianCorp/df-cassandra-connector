@@ -39,9 +39,9 @@ public class GetterFactory {
 		return factories.get(sourceType).targetJavaTypes();
 	}
 	
-	private static interface InternalFactory {
-		public Getter create(ScalarInputField source, Class<?> targetJavaType);
-		public Set<Class<?>> targetJavaTypes();
+	private interface InternalFactory {
+		Getter create(ScalarInputField source, Class<?> targetJavaType);
+		Set<Class<?>> targetJavaTypes();
 	}
 	
 	private static abstract class AbstractGetter implements Getter {
