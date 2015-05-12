@@ -17,7 +17,7 @@
 <feature
         id="com.actian.ilabs.dataflow.cassandra.ui.feature"
         label="Actian ILabs Cassandra Connector"
-        version="1.0.3.qualifier"
+        version="1.0.0.qualifier"
         provider-name="Actian Corporation">
 
     <description>This is the Actian ILabs Cassandra Connector feature.</description>
@@ -53,7 +53,7 @@
             id="com.actian.ilabs.dataflow.cassandra.ui.plugin"
             download-size="0"
             install-size="0"
-            version="1.0.3.qualifier"
+            version="1.0.0.qualifier"
             unpack="true"/>
 
 </feature>

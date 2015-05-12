@@ -2,8 +2,17 @@ This product includes software developed by Actian Corporation (http://www.actia
 
 In addition, this product includes the following software:
 
-Jayway JsonPath 2.0 (https://github.com/jayway/JsonPath) which is a JSONPath engine for extracting data from JSON
-objects using JSONPath expressions.  It uses the Apache 2.0 License (http://www.apache.org/licenses/LICENSE-2.0).
+DataStax Java Driver for Apache Cassandra 2.0 (https://github.com/datastax/java-driver).   This is licensed under the
+Apache 2.0 License.
 
-Jayway JsonPath 2.0 includes software from Netplex json-smart (https://github.com/netplex/json-smart-v2) a fast JSON
-parser for Java.   It is also licensed under the Apache 2.0 License.
+The DataStax Java Driver has the following dependencies:
+
+Netty v3.9.0 from The Netty Project (http://netty.io/).  It used the Apache 2.0 License.
+
+Guava v16.0.1 the Google Core Libraries for Java (https://github.com/google/guava).  Apache 2.0 License.
+
+Coda Hale Metrics v3.0.2 (https://github.com/dropwizard/metrics).  Apache 2.0 License.
+
+Xerial Snappy v1.0.5 (https://github.com/xerial/snappy-java).  Apache 2.0 License.
+
+LZ4 Java v1.2.0 (https://github.com/jpountz/lz4-java).  Apache 2.0 License.
