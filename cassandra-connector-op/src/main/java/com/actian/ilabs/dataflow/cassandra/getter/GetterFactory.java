@@ -213,10 +213,8 @@ public class GetterFactory {
 					} else if (targetJavaType == BigInteger.class) {
 						return field.asBigDecimal().toBigInteger();
 					} else if (targetJavaType == Double.class) {
-						// TODO: exception if the conversion is not exact? 
 						return field.asDouble();
 					} else if (targetJavaType == Float.class) {
-						// TODO: exception if the conversion is not exact? 
 						return field.asFloat();
 					}
 					return field.asLong();

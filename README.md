@@ -4,7 +4,7 @@ The Cassandra Connector is an Actian DataFlow operator for querying and updating
 
 ## Configuration
 
-Before building df-jsonpath-runner you need to define the following environment variables to point to the local DataFlow update site [dataflow-p2-site](https://github.com/ActianCorp/dataflow-p2-site) root directory and the DataFlow version.
+Before building df-cassandra-connector you need to define the following environment variables to point to the local DataFlow update site [dataflow-p2-site](https://github.com/ActianCorp/dataflow-p2-site) root directory and the DataFlow version.
 
     export DATAFLOW_REPO_HOME=/Users/myuser/dataflow-p2-site
     export DATAFLOW_VER=6.5.0.117
@@ -26,7 +26,7 @@ where version is of the form x.y.z or x.y.z-SNAPSHOT.
 ## Using the Cassandra Connector with the DataFlow Engine
 
 The build generates a JAR file in the target directory under
-[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-cassandra-connector/tree/master/jsonpath-op)
+[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-op)
 with a name similar to 
 
     cassandra-connector-op-1.y.z.jar
@@ -37,11 +37,19 @@ which can be included on the classpath when using the DataFlow engine.
 
 The build also produces a ZIP file which can be used as an archive file with the KNIME 'Help/Install New Software...' dialog.
 The ZIP file can be found in the target directory under
-[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-cassandra-connector/tree/master/jsonpath-ui-top/update-site) 
+[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-ui-top/update-site) 
 and with a name like 
 
 
     com.actian.ilabs.dataflow.cassandra.ui.update-1.y.z.zip
+ 
+## Limitations
+
+The current implementation has a couple of limitations:
+
+* The Cassandra Writer expects the keyspace and table it updates to exist beforehand.
+* There is currently no support for the inet, uuid, list, map, set or timestamp data types.
+
 
 
 
