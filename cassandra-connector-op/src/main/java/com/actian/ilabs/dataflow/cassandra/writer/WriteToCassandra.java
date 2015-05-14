@@ -148,6 +148,7 @@ public class WriteToCassandra extends ExecutableOperator {
 		private void flush() {
 			session.execute(batch);
 			batch.clear();
+			count = 0;
 		}
 	}
 	

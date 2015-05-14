@@ -19,7 +19,7 @@ CQL statements.   You can copy and paste these statements into a cqlsh console s
     create keyspace airline with replication = {'class' : 'SimpleStrategy','replication_factor' : 1};
 
     create table airline.ontime (
-        FL_DATE text,
+        FL_DATE timestamp,
         UNIQUE_CARRIER text,
         FL_NUM int,
         ORIGIN_AIRPORT_ID int,
@@ -28,11 +28,11 @@ CQL statements.   You can copy and paste these statements into a cqlsh console s
         DEST_AIRPORT_ID int,
         DEST_AIRPORT_SEQ_ID int,
         DEST_CITY_MARKET_ID int,
-        CRS_DEP_TIME text,
-        DEP_TIME text,
+        CRS_DEP_TIME int,
+        DEP_TIME int,
         DEP_DELAY double,
-        CRS_ARR_TIME text,
-        ARR_TIME text,
+        CRS_ARR_TIME int,
+        ARR_TIME int,
         ARR_DELAY double,
         CRS_ELAPSED_TIME double,
         ACTUAL_ELAPSED_TIME double,

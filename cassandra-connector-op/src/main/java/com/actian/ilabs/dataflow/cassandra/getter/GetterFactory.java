@@ -1,6 +1,7 @@
 package com.actian.ilabs.dataflow.cassandra.getter;
 
 import com.pervasive.datarush.ports.physical.*;
+import com.pervasive.datarush.tokens.scalar.DateTimeUtils;
 import com.pervasive.datarush.types.ScalarTokenType;
 
 import java.math.BigDecimal;
@@ -25,7 +26,10 @@ public class GetterFactory {
 		map.put(FLOAT, new FloatGetterFactory());
 		map.put(LONG, new LongGetterFactory());
 		map.put(INT, new IntegerGetterFactory());
-		
+        map.put(DATE, new DateGetterFactory());
+        map.put(TIME, new TimeGetterFactory());
+        map.put(TIMESTAMP, new TimestampGetterFactory());
+
 		// TODO: DateGetterFactory
 		// TODO: ObjectGetterFactory (InetAddress, UUID, List, Set, Map)
 		factories = Collections.unmodifiableMap(map);
@@ -83,8 +87,68 @@ public class GetterFactory {
 			return supported;
 		}
 	}
-	
-	private static final class BinaryGetterFactory implements InternalFactory {
+
+    private static final class DateGetterFactory implements InternalFactory {
+        @Override
+        public Getter create(ScalarInputField source, Class<?> targetJavaType) {
+            return new AbstractGetter(source, targetJavaType) {
+                @Override
+                public Object getNonNull(ScalarInputField source, Class<?> targetJavaType) {
+                    DateInputField field = (DateInputField)source;
+                    return DateTimeUtils.toDate(field.asEpochDays());
+                }
+            };
+        }
+
+        @Override
+        public Set<Class<?>> targetJavaTypes() {
+            Set<Class<?>> supported = new HashSet<Class<?>>();
+            supported.add(String.class);
+            return supported;
+        }
+    }
+
+    private static final class TimeGetterFactory implements InternalFactory {
+        @Override
+        public Getter create(ScalarInputField source, Class<?> targetJavaType) {
+            return new AbstractGetter(source, targetJavaType) {
+                @Override
+                public Object getNonNull(ScalarInputField source, Class<?> targetJavaType) {
+                    TimeInputField field = (TimeInputField) source;
+                    return DateTimeUtils.toTime((long) field.asDayMillis());
+                }
+            };
+        }
+
+        @Override
+        public Set<Class<?>> targetJavaTypes() {
+            Set<Class<?>> supported = new HashSet<Class<?>>();
+            supported.add(String.class);
+            return supported;
+        }
+    }
+
+    private static final class TimestampGetterFactory implements InternalFactory {
+        @Override
+        public Getter create(ScalarInputField source, Class<?> targetJavaType) {
+            return new AbstractGetter(source, targetJavaType) {
+                @Override
+                public Object getNonNull(ScalarInputField source, Class<?> targetJavaType) {
+                    TimestampInputField field = (TimestampInputField)source;
+                    return field.asTimestamp();
+                }
+            };
+        }
+
+        @Override
+        public Set<Class<?>> targetJavaTypes() {
+            Set<Class<?>> supported = new HashSet<Class<?>>();
+            supported.add(String.class);
+            return supported;
+        }
+    }
+
+    private static final class BinaryGetterFactory implements InternalFactory {
 		@Override
 		public Getter create(ScalarInputField source, Class<?> targetJavaType) {
 			return new AbstractGetter(source, targetJavaType) {

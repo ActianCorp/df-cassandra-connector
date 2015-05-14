@@ -7,8 +7,11 @@ import com.pervasive.datarush.graphs.LogicalGraph;
 import com.pervasive.datarush.graphs.LogicalGraphFactory;
 import com.pervasive.datarush.operators.CompositeOperator;
 import com.pervasive.datarush.operators.CompositionContext;
+import com.pervasive.datarush.operators.io.textfile.WriteDelimitedText;
 import com.pervasive.datarush.operators.sink.CollectRecords;
 import com.pervasive.datarush.ports.record.RecordPort;
+
+import static com.pervasive.datarush.io.WriteMode.OVERWRITE;
 
 public class ReadFromCassandra extends CompositeOperator {
 
@@ -100,14 +103,15 @@ public class ReadFromCassandra extends CompositeOperator {
 
 		ReadFromCassandra reader = graph.add(new ReadFromCassandra());
 		reader.setNodes("localhost");
-		reader.setQuery("select * from mykeyspace.users");
+		reader.setQuery("select * from airline.ontime where unique_carrier = 'US' limit 200 allow filtering;");
 //		reader.setQuery("select * from mykeyspace.users where user_id = ?");
-		
-		CollectRecords writer = graph.add(new CollectRecords());
-//		graph.connect(input.getOutput(), reader.getInput());
+
+		WriteDelimitedText writer = graph.add(new WriteDelimitedText());
+
+		writer.setHeader(true);
+		writer.setTarget("stdout:");
+		writer.setMode(OVERWRITE);
 		graph.connect(reader.getOutput(), writer.getInput());
 		graph.run();
-
-		System.out.println(writer.getOutput());
 	}
 }

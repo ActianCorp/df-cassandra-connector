@@ -12,6 +12,7 @@ import java.math.BigInteger;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class SetterFactory {
 
@@ -250,7 +251,7 @@ public class SetterFactory {
 				public void setNonNull(Row row) {
 					DateSettable settable = (DateSettable)target;
 					Date value = row.getDate(target.getName());
-					settable.set(value.getTime());
+					settable.set(TimeUnit.MILLISECONDS.toDays(value.getTime()));
 				}
 			};
 		}

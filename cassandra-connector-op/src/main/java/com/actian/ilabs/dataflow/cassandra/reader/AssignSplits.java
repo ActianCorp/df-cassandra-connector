@@ -68,7 +68,8 @@ public class AssignSplits extends ExecutableOperator {
 			if (!context.isSourceConnected(input)) {
 				throw new IllegalStateException("Parametrized query, input port must be connected!");
 			}
-			input.getType(context).verifyNames(query.getInputNames());
+			// verifyNames causes problems with case insensitive column names
+			// input.getType(context).verifyNames(query.getInputNames());
 		} 
 	}
 

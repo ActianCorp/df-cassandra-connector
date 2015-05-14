@@ -48,7 +48,7 @@ and with a name like
 The current implementation has a couple of limitations:
 
 * The Cassandra Writer expects the keyspace and table it updates to exist beforehand.
-* The Cassandra Reader currently has no support for the inet, uuid, list, map, set or timestamp data types.
+* The Cassandra Writer currently has no support for the inet, uuid, timeuuid, list, map, or set data types.
 * Query parameters are bound by position only.
 
 
