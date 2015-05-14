@@ -23,7 +23,13 @@ public class Getters {
 	private static ScalarInputField[] fields(RecordInput recordInput, String[] fieldNames) {
 		List<ScalarInputField> fields = new ArrayList<ScalarInputField>();
 		for (String name : fieldNames) {
-			fields.add(recordInput.getField(name));
+			for (int i = 0; i < recordInput.size(); i++){
+				ScalarInputField f = recordInput.getField(i);
+				if (f.getName().toLowerCase().equals(name.toLowerCase())) {
+                    fields.add(f);
+                    break;
+                }
+			}
 		}
 		return fields.toArray(new ScalarInputField[fields.size()]);
 	}

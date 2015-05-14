@@ -83,7 +83,8 @@ public class WriteToCassandra extends ExecutableOperator {
 			if (!context.isSourceConnected(input)) {
 				throw new IllegalStateException("Parametrized statement, input port must be connected!");
 			}
-			input.getType(context).verifyNames(query.getInputNames());
+			// verifyNames causes problems with case insensitive column names
+			// input.getType(context).verifyNames(query.getInputNames());
 			context.parallelize(ParallelismStrategy.CONFIGURED);
 		} else {
 			context.parallelize(ParallelismStrategy.NON_PARALLELIZABLE);
@@ -152,14 +153,30 @@ public class WriteToCassandra extends ExecutableOperator {
 	
 	public static void main(String[] args) {
 		LogicalGraph graph = LogicalGraphFactory.newLogicalGraph();
-		ReadDelimitedText reader = graph.add(new ReadDelimitedText("/Users/vdreilin/Desktop/input.txt"));
+		ReadDelimitedText reader = graph.add(new ReadDelimitedText("https://raw.githubusercontent.com/ActianCorp/df-cassandra-connector/master/examples/419234754_T_ONTIME_2015_1.csv"));
 		reader.setHeader(true);
 		WriteToCassandra writer = graph.add(new WriteToCassandra());
 		writer.setNodes(new String[]{"localhost"});
-		writer.setInsertStatement("INSERT INTO mykeyspace.users (user_id, fname, lname) VALUES (?, ?, ?)");
-//		writer.setInsertStatement("INSERT INTO mykeyspace.users (user_id, fname, lname) VALUES (10, 'a', 'b')");
-//		writer.setInsertStatement("INSERT INTO mykeyspace.users (user_id, fname, lname) VALUES (11, 'hmmm', 'wow')");
-		
+		writer.setInsertStatement("insert into airline.ontime (\n" +
+                "        FL_DATE,\n" +
+                "        UNIQUE_CARRIER,\n" +
+                "        FL_NUM,\n" +
+                "        ORIGIN_AIRPORT_ID,\n" +
+                "        ORIGIN_AIRPORT_SEQ_ID,\n" +
+                "        ORIGIN_CITY_MARKET_ID,\n" +
+                "        DEST_AIRPORT_ID,\n" +
+                "        DEST_AIRPORT_SEQ_ID,\n" +
+                "        DEST_CITY_MARKET_ID,\n" +
+                "        CRS_DEP_TIME,\n" +
+                "        DEP_TIME,\n" +
+                "        DEP_DELAY,\n" +
+                "        CRS_ARR_TIME,\n" +
+                "        ARR_TIME,\n" +
+                "        ARR_DELAY,\n" +
+                "        CRS_ELAPSED_TIME,\n" +
+                "        ACTUAL_ELAPSED_TIME)\n" +
+                "        values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+
 		graph.connect(reader.getOutput(), writer.getInput());
 		graph.compile().run();
 	}

@@ -98,9 +98,6 @@ public class ReadFromCassandra extends CompositeOperator {
 	public static void main(String[] args) {
 		LogicalGraph graph = LogicalGraphFactory.newLogicalGraph("Cassandra reader test");
 
-//		ReadDelimitedText input = graph.add(new ReadDelimitedText("/Users/vdreilin/Desktop/input.txt"));
-//		input.setHeader(true);
-		
 		ReadFromCassandra reader = graph.add(new ReadFromCassandra());
 		reader.setNodes("localhost");
 		reader.setQuery("select * from mykeyspace.users");
