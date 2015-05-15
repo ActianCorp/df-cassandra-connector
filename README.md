@@ -26,7 +26,7 @@ where version is of the form x.y.z or x.y.z-SNAPSHOT.
 ## Using the Cassandra Connector with the DataFlow Engine
 
 The build generates a JAR file in the target directory under
-[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-op)
+[df-cassandra-connector/cassandra-connector-op](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-connector-op)
 with a name similar to 
 
     cassandra-connector-op-1.y.z.jar
@@ -37,7 +37,7 @@ which can be included on the classpath when using the DataFlow engine.
 
 The build also produces a ZIP file which can be used as an archive file with the KNIME 'Help/Install New Software...' dialog.
 The ZIP file can be found in the target directory under
-[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-ui-top/update-site) 
+[df-cassandra-connector/cassandra-connector-ui-top/update-site](https://github.com/ActianCorp/df-cassandra-connector/tree/master/cassandra-connector-ui-top/update-site) 
 and with a name like 
 
 
